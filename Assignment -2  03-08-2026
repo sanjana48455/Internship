@@ -1,0 +1,75 @@
+Create a workflow, use sequence or flow chart: 
+Open amazon application and search for books from 2026 in Amazon search bar
+
+Assignment: Amazon Search Automation
+Objective
+Create a UiPath workflow using a Sequence or Flowchart to open Amazon and search for "Books from 2026" using the Amazon search bar.
+
+Workflow Type Used
+Sequence
+A Sequence is suitable because the automation follows a simple step-by-step process.
+
+Activities Used
+Sequence
+Use Application/Browser
+Type Into
+Click
+Delay
+
+Steps
+Step 1: Create a New Project
+Open UiPath Studio.
+Create a new Process project.
+Open Main.xaml.
+Step 2: Add a Sequence
+Add a Sequence to the Designer Panel.
+The Sequence will contain all the automation activities.
+Step 3: Open Amazon
+Add the Use Application/Browser activity.
+Indicate the Amazon website in the browser.
+Enter:
+https://www.amazon.in/
+This opens Amazon in the selected browser.
+
+Step 4: Enter Search Text
+Inside Use Application/Browser, add a Type Into activity.
+Indicate the Amazon search bar.
+Enter:
+Books from 2026
+The Type Into activity enters the search text into the Amazon search bar.
+
+Step 5: Click the Search Button
+Add a Click activity.
+Indicate the search button/magnifying-glass icon on Amazon.
+This performs the search.
+
+Step 6: Add a Delay
+Add a Delay activity after the Click activity.
+Set the delay to a few seconds.
+This gives Amazon time to load the search results.
+
+Workflow Structure
+Sequence
+   ↓
+Use Application/Browser
+   ↓
+Type Into
+"Books from 2026"
+   ↓
+Click
+Search Button
+   ↓
+Delay
+   ↓
+Search Results Displayed
+
+Activities and Their Purpose
+Activity	Purpose
+Sequence	Provides the linear workflow structure
+Use Application/Browser	Opens and interacts with Amazon
+Type Into	Enters "Books from 2026" into the search bar
+Click	Clicks the Amazon search button
+Delay	Allows time for the search results to load
+
+Result
+The workflow opens Amazon.in, enters "Books from 2026" into the Amazon search bar, clicks the search button, and displays the corresponding search results.
