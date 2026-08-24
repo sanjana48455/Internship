@@ -1,0 +1,120 @@
+ Assignment: RPA Challenge — Empty Field Handling
+ Objective
+Automate the RPA Challenge web application using data from an Excel file. One of the fields in the Excel file is intentionally removed or left empty. The automation should detect the empty field and display **"This is empty field"** in the corresponding field on the web application.
+The remaining fields should be entered normally, and the record should be submitted after all fields are processed.
+
+Website
+RPA Challenge: https://rpachallenge.com
+
+Activities Used
+
+1. Use Application/Browser
+2. Read Range
+3. For Each Row in Data Table
+4. Type Into
+5. If
+6. Assign
+7. Click
+
+Steps
+Step 1: Open the RPA Challenge Website
+
+* Open UiPath Studio.
+* Create a new Process project.
+* Add a **Use Application/Browser** activity.
+* Open the RPA Challenge website.
+
+Step 2: Modify the Excel File
+
+* Download the Excel file provided by the RPA Challenge.
+* Remove the data from one of the fields or leave that field empty.
+* Save the modified Excel file.
+
+For example, if the **Company Name** field is empty:
+
+`
+First Name       → Alice
+Last Name        → jazz
+Company Name     → Empty
+Role in Company  → Developer
+Address          → Bengaluru
+Email            → example@gmail.com
+Phone Number     → 9876543210
+
+ Step 3: Read the Excel File
+
+Use the Read Range activity.
+Store the Excel data in a DataTable variable.
+Example:
+dtData
+Step 4: Process Each Record
+
+Add a **For Each Row in Data Table** activity.
+Set `dtData` as the DataTable.
+The workflow processes each Excel record one by one.
+ Step 5: Check Each Field
+
+For the field that may be empty, use an **If** activity.
+
+Example for Company Name:
+
+String.IsNullOrWhiteSpace(CurrentRow("Company Name").ToString)
+
+This checks whether the Company Name field is empty.
+
+Step 6: If the Field is Empty
+If the condition is **True**, use:
+This is empty field
+as the value to be entered into the corresponding web field.
+
+For example 
+"This is empty field"
+
+ Step 7: If the Field Contains Data
+
+If the condition is **False**, enter the actual Excel value:
+
+CurrentRow("Company Name").ToString
+
+Step 8: Submit the Record
+
+* After all fields are processed, use a Click activity.
+* Indicate the Submit button.
+* Submit the record.
+* Continue to the next Excel row.
+
+## Example Logic
+
+Read Excel
+     ↓
+For Each Row
+     ↓
+Check Company Name
+     ↓
+Is Company Name Empty?
+      ↙              ↘
+    Yes               No
+     ↓                 ↓
+"This is empty     Enter Excel
+field"             value
+      ↘             ↙
+       Submit Record
+             ↓
+        Next Record
+```
+
+## Important Expression
+
+To check whether a field is empty:
+String.IsNullOrWhiteSpace(CurrentRow("Company Name").ToString)
+
+If it is empty
+"This is empty field"
+
+Otherwise:
+
+CurrentRow("Company Name").ToString
+
+## Result
+
+The automation successfully reads the Excel records, checks for empty fields, enters **"This is empty field"** when a required field has no value, enters the original data for non-empty fields, and submits each record to the web application.
