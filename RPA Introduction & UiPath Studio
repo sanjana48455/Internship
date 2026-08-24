@@ -1,0 +1,141 @@
+1. What is RPA?
+RPA (Robotic Process Automation) is a technology used to automate repetitive and rule-based tasks using software robots.
+RPA robots can perform tasks that humans normally do on a computer, such as:
+Entering data
+Copying and pasting information
+Reading and writing Excel files
+Extracting data from websites
+Sending emails
+Filling online forms
+Moving files between folders
+Generating reports
+RPA helps organizations reduce manual work, improve accuracy, save time, and increase productivity.
+
+2. What is UiPath?
+UiPath is an RPA platform used to design, develop, test, and run software automation workflows.
+UiPath provides a visual, low-code environment where automation workflows can be created using different activities instead of writing large amounts of code.
+
+3. Types of RPA Robots
+There are mainly three common types of RPA robots based on how and when they operate.
+
+3.1 Attended Robots
+Attended robots work together with a human user.
+They are usually triggered by the user when assistance is required.
+Example:
+A customer service employee receives a customer request. The employee starts an RPA robot, and the robot automatically retrieves the required customer information from different systems.
+Key point: Human + Robot working together.
+
+3.2 Unattended Robots
+Unattended robots work without continuous human involvement.
+They can be scheduled or triggered automatically and can execute tasks in the background.
+Example:
+An organization can schedule a robot to process invoices every night and update the required records automatically.
+Key point: Robot works independently without continuous human intervention.
+
+3.3 Hybrid Robots
+Hybrid automation combines attended and unattended automation.
+A human can start or interact with the automation when required, while other parts of the process can run automatically in the background.
+Example:
+An employee starts a process to verify customer information, and the robot performs the remaining data processing automatically.
+Key point: Combination of attended and unattended automation.
+
+UiPath Studio
+1. Introduction to UiPath Studio
+UiPath Studio is a development environment provided by UiPath for designing, building, testing, and debugging automation workflows.
+It provides a visual, low-code environment where automation can be created by adding and configuring different activities.
+UiPath Studio can be used to automate tasks involving:
+Web applications
+Desktop applications
+Excel and spreadsheets
+Files and folders
+Databases
+Emails
+Data extraction
+Repetitive business processes
+The automation created in UiPath Studio is called a workflow.
+
+2. Main Components of UiPath Studio
+Some important components of UiPath Studio are:
+Activities Panel:
+Contains different activities that can be dragged and dropped into the workflow.
+Examples:
+Click
+Type Into
+Get Text
+Assign
+If
+For Each
+Delay
+Message Box
+Read Range
+Write Range
+
+Designer Panel
+The Designer Panel is the main workspace where activities are placed and connected to create the automation workflow.
+
+Properties Panel
+The Properties Panel is used to configure the properties and settings of the selected activity.
+
+Project Panel
+The Project Panel displays the files and folders belonging to the current automation project.
+
+Output Panel
+The Output Panel displays logs, messages, warnings, and errors generated during execution.
+
+3. How to Create a New Project in UiPath Studio
+The following steps can be used to create a new automation project.
+
+Step 1: Open UiPath Studio
+Open UiPath Studio from the Start menu or desktop.
+
+Step 2: Create a New Project
+On the UiPath Studio home screen, select:
+
+New Project → Process
+A Process project is commonly used to create general-purpose automation workflows.
+
+Step 3: Enter Project Details
+Enter the required information:
+
+Name: Give a meaningful name to the project.
+Description: Provide a short description of the automation.
+
+Step 4: Create the Project
+Click Create.
+UiPath Studio creates the project with the required files and opens the project workspace.
+
+Step 5: Open the Main Workflow
+The main workflow file is usually named:
+Main.xaml
+This is where the automation workflow can be designed.
+
+Step 6: Add Activities
+Activities can be added by:
+Searching for an activity in the Activities Panel
+Dragging and dropping the activity into the Designer Panel
+
+Step 7: Configure Activities
+Select each activity and configure its properties using the Properties Panel.
+
+Step 8: Save and Run
+
+After completing the workflow:
+Save → Run
+UiPath executes the workflow and displays execution information in the Output Panel.
+
+Basic UiPath Project Structure
+
+A newly created UiPath project generally contains files and folders such as:
+Project Name/
+│
+├── Main.xaml
+├── project.json
+└── Other project files/
+Main.xaml
+Contains the main automation workflow.
+project.json
+Contains project configuration information, dependencies, and other project settings.
+
+
+
+
