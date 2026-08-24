@@ -1,0 +1,127 @@
+Assignment for tomorrow: (10-08-2026)
+Download the excel file and update the information to web application and submit after every record uploaded to website.
+Both website link and excel are available on this link:
+https://rpachallenge.com
+
+Assignment: RPA Challenge
+
+Date :10-08-2026
+
+Objective
+Download the Excel file provided on the RPA Challenge website and automate the process of entering each record from the Excel file into the web application.
+After entering each record, the information should be submitted before moving to the next record.
+
+Website
+RPA Challenge: https://rpachallenge.com
+
+Activities Used
+1. Use Application/Browser
+2. Click
+3. Read Range
+4. For Each Row in Data Table
+5. Type Into
+6. Write Line (optional, for debugging)
+7. Delay (if required)
+
+Steps
+Step 1: Open the RPA Challenge Website
+
+* Open UiPath Studio.
+* Create a new Process project.
+* Add a Use Application/Browser activity.
+* Open the RPA Challenge website.
+
+Step 2: Download the Excel File
+
+* Download the Excel file provided by the RPA Challenge.
+* Save the file in an accessible location.
+* The Excel file contains the records that need to be entered into the web application.
+
+ Step 3: Read the Excel Data
+
+* Use the Read Range activity.
+* Select the downloaded Excel file and the required worksheet.
+* Store the extracted data in a **DataTable variable**.
+
+For example:
+text id="t3m1d8"
+Variable: dtData
+Type: System.Data.DataTable
+
+The DataTable contains the records from the Excel file.
+
+Step 4: Loop Through Each Record
+
+* Add a For Each Row in Data Table activity.
+* Set the DataTable as the input.
+
+This allows UiPath to process each Excel record one by one.
+
+Step 5: Enter the Record into the Web Application
+
+Inside the For Each Row in Data Table:
+
+* Use Type Into activities to enter the values into the corresponding fields.
+* Read each value from the current Excel row.
+
+For example:
+CurrentRow("First Name").ToString
+Similarly, enter the values for:
+
+* First Name
+* Last Name
+* Company Name
+* Role in Company
+* Address
+* Email
+* Phone Number
+
+Step 6: Submit the Record
+
+* After entering all the information for the current record, use a **Click** activity.
+* Indicate the **Submit** button on the website.
+* Click Submit after every record.
+
+Step 7: Process the Next Record
+After submitting the current record, the **For Each Row in Data Table** automatically moves to the next row.
+The same process is repeated until all Excel records have been submitted.
+ Workflow Structure
+
+Open RPA Challenge Website
+          ↓
+Download Excel File
+          ↓
+Read Range
+          ↓
+Store Data in DataTable
+          ↓
+For Each Row in DataTable
+          ↓
+Enter First Name
+          ↓
+Enter Last Name
+          ↓
+Enter Company Name
+          ↓
+Enter Role
+          ↓
+Enter Address
+          ↓
+Enter Email
+          ↓
+Enter Phone Number
+          ↓
+Click Submit
+          ↓
+Next Record
+          ↓
+Repeat Until All Records Are Completed
+## Important Learning
+
+One important aspect of this assignment is that the **position of the fields changes after each submission**. Therefore, the automation needs to identify the correct fields dynamically rather than relying only on their fixed screen positions.
+
+## Result
+
+The UiPath automation reads records from the downloaded Excel file and enters them into the RPA Challenge web application one by one. After each record is completed, it clicks **Submit** and continues with the next record until all records are processed.
+
+
