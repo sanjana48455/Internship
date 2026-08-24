@@ -1,0 +1,68 @@
+Selectors in UiPath
+1. What is a Selector?
+A Selector in UiPath is a string of properties and attributes used to identify a specific user interface (UI) element in an application or website.
+Selectors help UiPath identify the exact element that the automation needs to interact with, such as a button, text box, link, checkbox, or table.
+For example, when UiPath needs to click a Login button, the selector helps UiPath identify the correct Login button on the screen.
+
+2. Why are Selectors Used?
+Selectors are mainly used to:
+Identify UI elements.
+Perform actions on specific elements.
+Automate web and desktop applications.
+Make automation more reliable.
+Distinguish one UI element from other similar elements.
+
+3. How Selectors Work
+When a UI element is indicated in UiPath, UiPath identifies the element using its properties and attributes.
+For example:
+<html title='Amazon.in' />
+<webctrl tag='INPUT' name='field-keywords' />
+Here, attributes such as tag and name help UiPath identify the required element.
+
+4. Common Selector Attributes
+Some commonly used attributes are:
+id – Identifies an element using its unique ID.
+name – Identifies an element using its name.
+class – Identifies the CSS class of an element.
+tag – Specifies the type of HTML element.
+title – Identifies an element using its title.
+aaname – Represents the accessible name of an element.
+
+5. Types of Selectors
+5.1 Full Selector
+A Full Selector contains the complete hierarchy of the UI element from the top-level application or browser element to the target element.
+It provides detailed information for identifying the element.
+5.2 Partial Selector
+A Partial Selector contains only the necessary information required to identify the target element.
+It is generally shorter and can be more flexible when the complete hierarchy is not required.
+
+6. Static and Dynamic Selectors
+Static Selector
+A Static Selector contains attributes whose values remain the same when the application is opened or used.
+Static selectors are generally more reliable.
+
+Dynamic Selector
+A Dynamic Selector contains attributes whose values may change during different sessions or executions.
+Dynamic attributes can make automation less reliable if they are used directly.
+
+7. Selector Example
+Suppose a web page contains a search box:
+<webctrl tag='INPUT' name='search' />
+Here:
+webctrl represents the web control.
+tag='INPUT' identifies the HTML input element.
+name='search' helps identify the specific search box.
+UiPath uses these attributes to locate the required element.
+
+8. Best Practices for Selectors
+Prefer stable attributes such as id, name, or aaname when they are reliable.
+Avoid unnecessary attributes.
+Avoid attributes whose values change frequently.
+Use UiPath's selector editor to inspect and modify selectors.
+Test selectors before running the complete automation.
+Use wildcards such as * when appropriate for dynamic values.
+
+9. Importance of Selectors
+Selectors are an important part of UiPath automation because they allow robots to reliably identify and interact with UI elements. A well-designed selector makes an automation workflow more stable and reduces errors caused by changes in the application interface.
+Summary
+Selector = A mechanism used by UiPath to identify and interact with a specific UI element.
