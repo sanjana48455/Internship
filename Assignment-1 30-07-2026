@@ -1,0 +1,85 @@
+1)Create a Flowchart
+2)Take input from user
+3)Check if user input is a name of a person
+4) If Yes display the name
+5) If No, print the user input in output pannel
+
+Assignment: Flowchart — User Input Validation
+Objective:
+Create a UiPath Flowchart that takes an input from the user, checks whether the input is a person's name, and displays the appropriate result.
+
+Activities Used
+Flowchart
+Input Dialog
+Assign
+If
+Message Box
+Write Line
+
+Steps
+Step 1: Create a Flowchart
+Create a new UiPath Process.
+In the Designer Panel, add a Flowchart activity.
+Use the Flowchart as the main structure of the automation.
+Step 2: Take Input from the User
+Use the Input Dialog activity to ask the user to enter a value.
+
+Example:
+Title: User Input
+Label: Enter your name:
+Store the entered value in a String variable:
+userInput
+
+Step 3: Check Whether the Input is a Person's Name
+Use an If activity to check whether the entered value is a person's name.
+For this assignment, we can consider the input to be a person's name if it contains only alphabetic characters.
+Example condition:
+System.Text.RegularExpressions.Regex.IsMatch(userInput, "^[A-Za-z ]+$")
+This checks whether the input contains only letters and spaces.
+
+Step 4: If the Input is a Name
+Connect the True branch of the If activity to a Message Box.
+Display:
+Name: [userInput]
+For example, if the user enters:
+Sanjana
+The Message Box displays:
+Name: Sanjana
+
+Step 5: If the Input is Not a Name
+Connect the False branch of the If activity to a Write Line activity.
+Use Write Line to display the input in the Output Panel.
+Example:
+If the user enters:
+12345
+The Output Panel displays:
+12345
+
+Workflow Structure :
+
+The final Flowchart can be arranged as:
+
+                 Start
+                   ↓
+             Input Dialog
+                   ↓
+              User Input
+                   ↓
+             Check Input
+                   ↓
+             Is it a name?
+              ↙         ↘
+           Yes           No
+            ↓             ↓
+      Message Box      Write Line
+      Display Name    Output Panel
+Activities and Purpose
+Activity	      Purpose
+Flowchart	Controls the overall workflow
+Input Dialog	Takes input from the user
+If	Checks whether the input is a person's name
+Message Box	Displays the name when the condition is True
+Write Line	Displays the input in the Output Panel when the condition is False
+Result
+
+The automation successfully takes input from the user, validates the input, displays the name when the input is a valid person's name, and writes other inputs to the Output Panel.
