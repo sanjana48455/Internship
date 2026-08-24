@@ -1,0 +1,85 @@
+Arguments in UiPath
+1. What are Arguments?
+Arguments in UiPath are used to pass data from one workflow to another.
+They are useful when different workflows need to share information.
+For example, one workflow can receive a username as an argument, process it, and pass the result to another workflow.
+
+2. Types of Arguments
+UiPath has three main types of arguments:
+1. In Argument
+In Arguments are used to pass data into a workflow.
+Direction: Outside → Workflow
+Example
+A main workflow passes a username to another workflow.
+Main Workflow
+     ↓
+ Username
+     ↓
+Child Workflow
+
+The child workflow receives the username through an In Argument.
+
+2. Out Argument
+Out Arguments are used to pass data out of a workflow.
+Direction: Workflow → Outside
+Example
+A workflow calculates the total amount and sends the result back to the main workflow.
+Child Workflow
+     ↓
+ Total Amount
+     ↓
+Main Workflow
+
+The result is passed using an Out Argument.
+
+3. In/Out Argument
+In/Out Arguments are used when data needs to be passed into a workflow and then returned after being modified.
+Direction: Outside ↔ Workflow
+Example
+A workflow receives a number, modifies it, and returns the updated value.
+Main Workflow
+     ↓
+ Input Value
+     ↓
+Child Workflow
+     ↓
+Updated Value
+     ↓
+Main Workflow
+
+3. Why are Arguments Used?
+Arguments are useful because they:
+Allow workflows to communicate with each other.
+Help pass data between workflows.
+Make workflows reusable.
+Reduce dependency between workflows.
+Help create modular and organized automations.
+
+4. Variables
+What are Variables?
+Variables are used to store and manipulate data during the execution of a workflow.
+A variable can store different types of data such as text, numbers, Boolean values, and DataTables.
+
+Examples of Data Types
+String – Stores text
+Int32 – Stores whole numbers
+Double – Stores decimal numbers
+Boolean – Stores True or False
+DataTable – Stores tabular data
+Example :
+A variable named username can store:
+username = "Sanjana"
+A variable named count can store:
+count = 10
+Scope of a Variable
+The scope determines where a variable can be accessed within a workflow.
+A variable can be used within the activity or workflow where its scope is defined.
+
+5. Difference Between Variables and Arguments
+Variables are used to store and manipulate data within a workflow during its execution. They are mainly used when the data is required inside the same workflow. Variables have a defined scope, which determines where they can be accessed.
+Arguments, on the other hand, are used to pass data between different workflows. They allow one workflow to send data to another workflow or receive data from it. Arguments have three directions: In, Out, and In/Out.
+In simple terms, variables are used to store data within a workflow, whereas arguments are used to transfer data between workflows.
+
+
+
+
